@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2718222-B0F2-4413-9E48-5121CDBD32E6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DurenOffline</RootNamespace>
+    <AssemblyName>DurenOffline</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Card.cs" />
+    <Compile Include="EndGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EndGame.Designer.cs">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rules.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rules.Designer.cs">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartWindow.Designer.cs">
+      <DependentUpon>StartWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Game.cs" />
+    <Compile Include="GamesTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GamesTable.Designer.cs">
+      <DependentUpon>GamesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EndGame.resx">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rules.resx">
+      <DependentUpon>Rules.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartWindow.resx">
+      <DependentUpon>StartWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GamesTable.resx">
+      <DependentUpon>GamesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AllCards\0.jpg" />
+    <Content Include="AllCards\0_90.jpg" />
+    <Content Include="AllCards\1.jpg" />
+    <Content Include="AllCards\10.jpg" />
+    <Content Include="AllCards\11.jpg" />
+    <Content Include="AllCards\12.jpg" />
+    <Content Include="AllCards\13.jpg" />
+    <Content Include="AllCards\14.jpg" />
+    <Content Include="AllCards\15.jpg" />
+    <Content Include="AllCards\16.jpg" />
+    <Content Include="AllCards\17.jpg" />
+    <Content Include="AllCards\18.jpg" />
+    <Content Include="AllCards\19.jpg" />
+    <Content Include="AllCards\2.jpg" />
+    <Content Include="AllCards\20.jpg" />
+    <Content Include="AllCards\21.jpg" />
+    <Content Include="AllCards\22.jpg" />
+    <Content Include="AllCards\23.jpg" />
+    <Content Include="AllCards\24.jpg" />
+    <Content Include="AllCards\25.jpg" />
+    <Content Include="AllCards\26.jpg" />
+    <Content Include="AllCards\27.jpg" />
+    <Content Include="AllCards\28.jpg" />
+    <Content Include="AllCards\29.jpg" />
+    <Content Include="AllCards\3.jpg" />
+    <Content Include="AllCards\30.jpg" />
+    <Content Include="AllCards\31.jpg" />
+    <Content Include="AllCards\32.jpg" />
+    <Content Include="AllCards\33.jpg" />
+    <Content Include="AllCards\34.jpg" />
+    <Content Include="AllCards\35.jpg" />
+    <Content Include="AllCards\36.jpg" />
+    <Content Include="AllCards\37.jpg" />
+    <Content Include="AllCards\38.jpg" />
+    <Content Include="AllCards\39.jpg" />
+    <Content Include="AllCards\4.jpg" />
+    <Content Include="AllCards\40.jpg" />
+    <Content Include="AllCards\41.jpg" />
+    <Content Include="AllCards\42.jpg" />
+    <Content Include="AllCards\43.jpg" />
+    <Content Include="AllCards\44.jpg" />
+    <Content Include="AllCards\45.jpg" />
+    <Content Include="AllCards\46.jpg" />
+    <Content Include="AllCards\47.jpg" />
+    <Content Include="AllCards\48.jpg" />
+    <Content Include="AllCards\49.jpg" />
+    <Content Include="AllCards\5.jpg" />
+    <Content Include="AllCards\50.jpg" />
+    <Content Include="AllCards\51.jpg" />
+    <Content Include="AllCards\52.jpg" />
+    <Content Include="AllCards\6.jpg" />
+    <Content Include="AllCards\7.jpg" />
+    <Content Include="AllCards\8.jpg" />
+    <Content Include="AllCards\9.jpg" />
+    <None Include="Resources\championship1.png" />
+    <None Include="Resources\championship.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
